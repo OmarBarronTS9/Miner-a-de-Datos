@@ -6,6 +6,7 @@ import numpy as np
 from functools import reduce
 from scipy.stats import mode
 
+plt.style.use('dark_background')
 
 def print_tabulate(df: pd.DataFrame):
     print(tabulate(df, headers=df.columns, tablefmt="orgtbl"))
@@ -24,6 +25,7 @@ def get_cmap(n, name="hsv"):
     return plt.cm.get_cmap(name, n)
 
 def scatter_group_by(file_path: str, df: pd.DataFrame, x_column: str, y_column: str, label_column: str):
+    plt.figure(figsize=(8,5))
     fig, ax = plt.subplots()
     labels = pd.unique(df[label_column])
     cmap = get_cmap(len(labels) + 1)
@@ -31,40 +33,16 @@ def scatter_group_by(file_path: str, df: pd.DataFrame, x_column: str, y_column: 
         filter_df = df.query(f"{label_column} == '{label}'")
         ax.scatter(filter_df[x_column], filter_df[y_column], label=label, color=cmap(i))
     ax.legend()
+    plt.title("Ganadores de Medallas")
     plt.savefig(file_path)
-    plt.close()
-
-def euclidean_distance(Punto1: np.array, Punto2: np.array) -> float:
-    return np.sqrt(np.sum((Punto2 - Punto1) ** 2))
-
-def k_nearest_neightbors(points: List[np.array], labels: np.array, input_data: List[np.array], k: int):
-    input_distances = [
-        [euclidean_distance(input_point, point) for point in points]
-        for input_point in input_data
-    ]
-    points_k_nearest = [
-        np.argsort(input_point_dist)[:k] for input_point_dist in input_distances
-    ]
-    return [
-        mode([labels[index] for index in point_nearest])
-        for point_nearest in points_k_nearest
-    ]
+    plt.show()
 
 groups = [(20, 20, "grupo1"), (80, 40, "grupo2"), (200, 200, "grupo3")]
-df = pd.read_csv("csv_operacion5.csv")
-scatter_group_by("img/groups.png", df, "Sexo", "Año", "Temporada")
+df = pd.read_csv("csv_operacion7.csv")
+scatter_group_by("img/Data Classification.png", df, "Año", "Sexo", "Medalla")
 list_t = [
     (np.array(tuples[0:1]), tuples[2])
     for tuples in df.itertuples(index=False, name=None)
 ]
 points = [point for point, _ in list_t]
 labels = [label for _, label in list_t]
-
-kn = k_nearest_neightbors(
-    points,
-    labels,
-    [np.array([100, 150]), np.array([1, 1]), np.array([1, 300]), np.array([80, 40])],
-    5,
-)
-
-print(kn)

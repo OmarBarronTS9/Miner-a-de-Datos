@@ -46,12 +46,12 @@ def Práctica_3():
     df_E.set_index("Año", inplace = True)         
     df_E.to_csv('csv_operacion6.csv')  
 
-    # df5 = pd.read_csv("csv_limpio.csv") 
-    # df5 = df5.drop(['ID', 'Nombre', 'Sexo', 'Estatura', 'Equipo', 'Comité', 'Año', 'Temporada', 'Ciudad', 'Deporte', 'Evento', 'Medalla'], axis=1)
-    # df5 = df5[df5['Edad'].notna()]
-    # df5 = df5[df5['Peso'].notna()]
-    # df5.reset_index(inplace  = True)
-    # df5.set_index("Edad", inplace = True)       
-    # df5.to_csv('csv_operacion6.csv')      
+    #6. Agrupar Medallas, Año y Contar los atletas con el sexo     
+    df6 = pd.read_csv(file_name) 
+    df6 = df6[df6['Medalla'].notna()]
+    df_F = df6.groupby(["Año", "Medalla"])[['Sexo']].count()
+    df_F.reset_index(inplace  = True)
+    df_F.set_index("Año", inplace = True) 
+    df_F.to_csv('csv_operacion7.csv')
 
 Práctica_3()
