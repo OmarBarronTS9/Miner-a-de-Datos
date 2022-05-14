@@ -18,7 +18,7 @@ def Práctica_4():
     plt.plot(x, y, label = "Atletas")
     plt.title("Atletas por Año")    
     plt.legend()
-    plt.savefig("img/Grafica1 - Atletas por Año.png")
+    plt.savefig("img/Gráficas/Grafica1 - Atletas por Año.png")
     plt.show()
     
     #Gráfica 2
@@ -31,7 +31,7 @@ def Práctica_4():
     plt.bar(x, y, label = "Atletas")
     plt.title("Comparación entre el Sexo de los Atletas")    
     plt.legend()
-    plt.savefig("img/Grafica2 - Participantes por Sexo.png")
+    plt.savefig("img/Gráficas/Grafica2 - Participantes por Sexo.png")
     plt.show()
     
     #Gráfica 3
@@ -41,7 +41,7 @@ def Práctica_4():
     plt.figure(figsize=(8,5))
     plt.pie(y, labels=x)
     plt.title("Distribución de Medallas entre Países Participantes")
-    plt.savefig("img/Grafica3 - Medallas por Comité(Total).png")
+    plt.savefig("img/Gráficas/Grafica3 - Medallas por Comité(Total).png")
     plt.show()
 
     #Gráfica 4
@@ -54,7 +54,7 @@ def Práctica_4():
     plt.scatter(x, y, label="Estatura")
     plt.title("Estatura Promedio")
     plt.legend()
-    plt.savefig("img/Grafica4 - Estatura promedio por sexo.png")
+    plt.savefig("img/Gráficas/Grafica4 - Estatura promedio por sexo.png")
     plt.show()    
 
 Práctica_4()
