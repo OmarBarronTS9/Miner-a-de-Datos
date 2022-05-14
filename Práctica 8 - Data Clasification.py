@@ -38,7 +38,7 @@ def scatter_group_by(file_path: str, df: pd.DataFrame, x_column: str, y_column: 
     plt.show()
 
 groups = [(20, 20, "grupo1"), (80, 40, "grupo2"), (200, 200, "grupo3")]
-df = pd.read_csv("csv_operacion7.csv")
+df = pd.read_csv("csv_operacion/csv_operacion7.csv")
 scatter_group_by("img/Data Classification.png", df, "Año", "Sexo", "Medalla")
 list_t = [
     (np.array(tuples[0:1]), tuples[2])

@@ -10,13 +10,13 @@ def Práctica_5():
 
     plt.style.use('dark_background')
     
-    df = pd.read_csv("csv_limpio.csv")
+    df = pd.read_csv("csv_operacion/csv_limpio.csv")
     df_T = df.groupby(["Temporada", "Año"])[['Sexo']].count()
     df_T.reset_index(inplace = True)
     df_T.set_index("Temporada", inplace = True)
-    df_T.to_csv('csv_operacion5.csv') 
+    df_T.to_csv('csv_operacion/csv_operacion5.csv') 
 
-    df = pd.read_csv("csv_operacion5.csv")
+    df = pd.read_csv("csv_operacion/csv_operacion5.csv")
     x = df['Temporada']
     y = df['Sexo']
     plt.figure(figsize=(8,5))

@@ -11,7 +11,7 @@ from sklearn import preprocessing
 plt.style.use('dark_background')
 
 def normalizar_csv():
-    Csv2 = pd.read_csv("csv_operacion1.csv")
+    Csv2 = pd.read_csv("csv_operacion/csv_operacion1.csv")
     Comité_Array = np.array(Csv2['Comité'])
     normalized_array = preprocessing.normalize([Comité_Array])
     print(normalized_array)
@@ -44,7 +44,7 @@ def plt_lr(df: pd.DataFrame, x:str, y: str, m: float, b: float, r2: float, r2_ad
                      [ m * x + hi_band for _, x in fixed_x.items()], alpha=0.2, color=colors[1])
     plt.title("Pronóstico para los Participantes del Próximo Torneo")
 
-df = pd.read_csv("csv_operacion1.csv")
+df = pd.read_csv("csv_operacion/csv_operacion1.csv")
 df2 = df.groupby("Año")\
               .aggregate(Comité=pd.NamedAgg(column="Comité", aggfunc=pd.DataFrame.mean))
 df2.reset_index(inplace=True)

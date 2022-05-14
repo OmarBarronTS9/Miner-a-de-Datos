@@ -10,7 +10,7 @@ def Práctica_6():
 
     plt.style.use('dark_background')
     
-    df = pd.read_csv("csv_operacion1.csv")
+    df = pd.read_csv("csv_operacion/csv_operacion1.csv")
     labels = df["Comité"]
     features = df["Año"]
 

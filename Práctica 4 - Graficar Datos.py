@@ -8,7 +8,7 @@ def Práctica_4():
     plt.style.use('dark_background')
 
     #Gráfica 1
-    df = pd.read_csv("csv_operacion1.csv")
+    df = pd.read_csv("csv_operacion/csv_operacion1.csv")
     x = df['Año']
     y = df['Comité']
     plt.figure(figsize=(8,5))
@@ -22,7 +22,7 @@ def Práctica_4():
     plt.show()
     
     #Gráfica 2
-    df = pd.read_csv("csv_operacion2.csv")
+    df = pd.read_csv("csv_operacion/csv_operacion2.csv")
     x = df['Sexo']
     y = df['Nombre']
     plt.figure(figsize=(8,5))
@@ -35,7 +35,7 @@ def Práctica_4():
     plt.show()
     
     #Gráfica 3
-    df = pd.read_csv("csv_operacion3.csv")
+    df = pd.read_csv("csv_operacion/csv_operacion3.csv")
     x = df['Comité']
     y = df['Medalla']
     plt.figure(figsize=(8,5))
@@ -45,7 +45,7 @@ def Práctica_4():
     plt.show()
 
     #Gráfica 4
-    df = pd.read_csv("csv_operacion4.csv")
+    df = pd.read_csv("csv_operacion/csv_operacion4.csv")
     x = df['Año']
     y = df['Estatura']
     plt.figure(figsize=(8,5))

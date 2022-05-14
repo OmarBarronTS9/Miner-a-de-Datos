@@ -9,6 +9,6 @@ def Práctica_2():
     df['Season'] = df['Season'].replace(to_replace = ["Summer", "Winter"], value = ["Verano", "Invierno"])
     df.columns = ['ID', 'Nombre', 'Sexo', 'Edad', 'Estatura', 'Peso', 'Equipo', 'Comité', 'Año', 'Temporada', 'Ciudad', 'Deporte', 'Evento', 'Medalla']
     
-    df.to_csv('csv_limpio.csv')
+    df.to_csv('csv_operacion/csv_limpio.csv')
 
 Práctica_2()

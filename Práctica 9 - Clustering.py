@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from math import sqrt
 
 plt.style.use('dark_background')
-data = pd.read_csv("csv_operacion6.csv")
+data = pd.read_csv("csv_operacion/csv_operacion6.csv")
 
 X = data[["Edad", "Peso"]]
 plt.scatter(X["Edad"], X["Peso"], c="gray", label='Peso')
